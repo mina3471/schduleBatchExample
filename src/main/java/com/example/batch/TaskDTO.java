@@ -8,7 +8,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class TaskDTO {
-    private String 시군구명;
+    private String language;
     private String totalCount;
 
 }
