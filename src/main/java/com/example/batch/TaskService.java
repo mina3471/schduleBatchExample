@@ -39,6 +39,7 @@ public class TaskService {
             bufferedWriter.flush();
             bufferedWriter.close();
             System.out.println("파일 생성 완료");
+            taskMapper.truncate_data();
 
         }catch (Exception e){
             System.out.println("오류 발생"+ e);

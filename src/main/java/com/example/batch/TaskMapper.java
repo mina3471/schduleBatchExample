@@ -2,6 +2,7 @@ package com.example.batch;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -9,6 +10,6 @@ import java.util.List;
 public interface TaskMapper {
     @Select("SELECT language, SUM(`count`)  as totalCount FROM `data` GROUP BY `language`") // Group by
     List<TaskDTO> read_data();
-    @Select("SELECT * FROM `data`") // 다 가져온 뒤에 자바에서 정제하기
-    List<TaskDTO> read_all_data();
+    @Update("truncate `data`") // 다 가져온 뒤에 자바에서 정제하기
+    void truncate_data();
 }
